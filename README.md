@@ -27,7 +27,7 @@ Add the configuration for the production database to `database.php`:
 
 ```bash
 'live-db' => [
-  'driver' => 'mysql',
+  'driver' => env('DB_LIVE_CONNECTION', 'mysql'),
   'host' => env('DB_LIVE_HOST', 'your live server database host here'),
   'port' => env('DB_LIVE_PORT', '3306'),
   'database' => env('DB_LIVE_DATABASE', 'forge'),

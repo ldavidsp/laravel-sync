@@ -38,13 +38,14 @@ class SyncDB extends Command {
   public function handle() {
     if (App::environment(config('sync.environment'))) {
       $live_database = DB::connection(config('sync.connection_prod'));
-      $tables = DB::connection(config('sync.connection_local'))->select('SHOW TABLES');
+      $local_database = DB::connection(config('sync.connection_local'));
+      $tables = $local_database->select('SHOW TABLES');
 
       foreach ($tables as $table) {
-        $table_name = $table->{'Tables_in_' . config('database.connections.mysql.database')};
+        $table_name = $table->{'Tables_in_' . config('sync.database')};
         if (isset($table_name)) {
           if (Schema::hasColumn($table_name, config('sync.column_sync'))) {
-            $maxId = DB::table($table_name)->max(config('sync.column_sync'));
+            $maxId = $local_database->table($table_name)->max(config('sync.column_sync'));
             if (!empty($maxId)) {
               $data_result = $live_database->table($table_name)
                 ->where(config('sync.column_sync'), '>', $maxId)
@@ -52,7 +53,7 @@ class SyncDB extends Command {
 
               if (count($data_result) > 0) {
                 foreach ($data_result as $data) {
-                  DB::table($table_name)->insert((array) $data);
+                  $local_database->table($table_name)->insert((array) $data);
                   printf('Sync table: %s - id: %s' . PHP_EOL, $table_name, $data->id);
                 }
               }

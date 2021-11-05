@@ -22,21 +22,21 @@ return [
     | Local database
     |--------------------------------------------------------------------------
     */
-  'database' => config('database.connections.mysql.database'),
+  'database' => env('DB_DATABASE', 'db'),
 
   /*
     |--------------------------------------------------------------------------
     | Local name connection
     |--------------------------------------------------------------------------
     */
-  'connection_local' => 'mysql',
+  'connection_local' => env('DB_CONNECTION', 'mysql'),
 
   /*
     |--------------------------------------------------------------------------
     | Production name connection
     |--------------------------------------------------------------------------
     */
-  'connection_prod' => 'live-db',
+  'connection_prod' => env('DB_LIVE_CONNECTION', 'live-db'),
 
   /*
     |--------------------------------------------------------------------------
