@@ -36,7 +36,7 @@ return [
     | Production name connection
     |--------------------------------------------------------------------------
     */
-  'connection_prod' => env('DB_LIVE_CONNECTION', 'live-db'),
+  'connection_prod' => 'live-db',
 
   /*
     |--------------------------------------------------------------------------
