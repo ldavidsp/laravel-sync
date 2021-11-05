@@ -3,7 +3,7 @@
   "description": "Synchronize your local or stage database with the production one.",
   "keywords": [
     "homeflow",
-	  "sync",
+    "sync",
     "laravel",
     "php",
     "db"
