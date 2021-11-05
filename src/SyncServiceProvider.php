@@ -20,7 +20,7 @@ class SyncServiceProvider extends ServiceProvider {
 
       $this->publishes([
         __DIR__ . '/../config/sync.php' => config_path('sync.php'),
-      ], 'config');
+      ], 'sync-config');
     }
   }
 
