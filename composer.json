@@ -1,0 +1,42 @@
+{
+  "name": "ldavidsp/laravel-sync",
+  "description": "Synchronize your local or stage database with the production one.",
+  "keywords": [
+    "homeflow",
+	  "sync",
+    "laravel",
+    "php",
+    "db"
+  ],
+  "homepage": "https://github.com/ldavidsp/laravel-sync",
+  "license": "MIT",
+  "authors": [
+    {
+      "name": "Luis Solorzano",
+      "email": "luisnic20@gmail.com",
+      "homepage": "https://homeflowapp.com",
+      "role": "Developer"
+    }
+  ],
+  "require": {
+    "php": ">=7.2.5",
+    "laravel/framework": ">=6.0"
+  },
+  "autoload": {
+    "psr-4": {
+      "Ldavidsp\\Sync\\": "src/"
+    }
+  },
+  "config": {
+    "sort-packages": true
+  },
+  "extra": {
+    "laravel": {
+      "providers": [
+        "Ldavidsp\\Sync\\SyncServiceProvider"
+      ]
+    }
+  },
+  "minimum-stability": "dev",
+  "prefer-stable": true
+}
