@@ -43,7 +43,9 @@ class SyncDB extends Command {
 
       foreach ($tables as $table) {
         $table_name = $table->{'Tables_in_' . config('sync.database')};
-        if (isset($table_name)) {
+        $ignore_table = array_search(trim($table_name), config('sync.ignore_tables'), TRUE);
+
+        if (isset($table_name) && !empty($ignore_table)) {
           if (Schema::hasColumn($table_name, config('sync.column_sync'))) {
             $maxId = $local_database->table($table_name)->max(config('sync.column_sync'));
             if (!empty($maxId)) {
