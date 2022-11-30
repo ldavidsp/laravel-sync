@@ -61,6 +61,25 @@ class SyncDB extends Command {
               }
             }
           }
+
+          /**
+           * Update for column update_at.
+           */
+          if (config('sync.column_sync_for_updated_at')) {
+            $maxUpdateAt = $local_database->table($table_name)->max(config('sync.updated_at'));
+            if (!empty($maxUpdateAt)) {
+              $data_result = $live_database->table($table_name)
+                ->where(config('sync.updated_at'), '>', $maxUpdateAt)
+                ->get();
+
+              if (count($data_result) > 0) {
+                foreach ($data_result as $data) {
+                  $local_database->table($table_name)->where(config('sync.column_sync'), $data->id)->update((array) $data);
+                  printf('Update table: %s - id: %s' . PHP_EOL, $table_name, $data->created_at);
+                }
+              }
+            }
+          }
         }
       }
     }
