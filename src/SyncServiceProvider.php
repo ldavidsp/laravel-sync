@@ -3,7 +3,7 @@
 namespace Homeflow\Sync;
 
 use Illuminate\Support\ServiceProvider;
-use Homeflow\Sync\Commands\SyncDB;
+use Homeflow\Sync\Commands\HomeflowSyncDB;
 
 class SyncServiceProvider extends ServiceProvider {
 
