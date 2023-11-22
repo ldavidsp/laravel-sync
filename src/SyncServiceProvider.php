@@ -1,9 +1,9 @@
 <?php
 
-namespace Ldavidsp\Sync;
+namespace Homeflow\Sync;
 
 use Illuminate\Support\ServiceProvider;
-use Ldavidsp\Sync\Commands\SyncDB;
+use Homeflow\Sync\Commands\SyncDB;
 
 class SyncServiceProvider extends ServiceProvider {
 
@@ -15,7 +15,7 @@ class SyncServiceProvider extends ServiceProvider {
   public function boot() {
     if ($this->app->runningInConsole()) {
       $this->commands([
-        SyncDB::class,
+        HomeflowSyncDB::class,
       ]);
 
       $this->publishes([

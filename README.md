@@ -23,6 +23,18 @@ Publish the config file with:
 php artisan vendor:publish --tag=sync-config
 ```
 
+Add tables to synchronize in `config/sync.php`:
+```php
+  /*
+    |--------------------------------------------------------------------------
+    | Sync tables
+    |--------------------------------------------------------------------------
+    */
+  'sync_tables' => [
+    'table_name_1',
+  ],
+```
+
 Add the configuration for the production database to `database.php`:
 
 ```bash

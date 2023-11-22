@@ -12,8 +12,8 @@
   "license": "MIT",
   "authors": [
     {
-      "name": "Luis Solorzano",
-      "email": "luisnic20@gmail.com",
+      "name": "Homeflow Technologies",
+      "email": "lsolorzano@homeflowapp.com",
       "homepage": "https://homeflowapp.com",
       "role": "Developer"
     }
@@ -24,7 +24,7 @@
   },
   "autoload": {
     "psr-4": {
-      "Ldavidsp\\Sync\\": "src/"
+      "Homeflow\\Sync\\": "src/"
     }
   },
   "config": {
@@ -33,7 +33,7 @@
   "extra": {
     "laravel": {
       "providers": [
-        "Ldavidsp\\Sync\\SyncServiceProvider"
+        "Homeflow\\Sync\\SyncServiceProvider"
       ]
     }
   },
