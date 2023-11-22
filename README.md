@@ -68,6 +68,7 @@ php artisan sync:prod
 
 or
 
+Add the configuration in `app/Console/Kernel.php`:
 ```php
 /**
   * Sync local database with production.
