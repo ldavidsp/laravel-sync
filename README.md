@@ -52,7 +52,7 @@ Add the configuration for the production database to `database.php`:
 
 Synchronize database:
 ``` bash
-php artisan sync:db
+php artisan sync:prod
 ```
 
 ## License

@@ -14,7 +14,7 @@ class HomeflowSyncDB extends Command {
    *
    * @var string
    */
-  protected $signature = 'sync:db';
+  protected $signature = 'sync:prod';
 
   /**
    * The console command description.
