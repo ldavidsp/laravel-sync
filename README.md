@@ -35,7 +35,7 @@ Add tables to synchronize in `config/sync.php`:
   ],
 ```
 
-Add the configuration for the production database to `database.php`:
+Add the configuration for the production database to `config/database.php`:
 
 ```bash
 'live-db' => [
