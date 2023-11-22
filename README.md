@@ -66,6 +66,17 @@ Synchronize database:
 php artisan sync:prod
 ```
 
+or
+
+```php
+/**
+  * Sync local database with production.
+  */
+  if (App::environment('local')) {
+    $schedule->command('sync:prod')->everyTenMinutes();
+  }
+```
+
 ## License
 
 The MIT License (MIT). Please see [License File](LICENSE.md) for more information.
