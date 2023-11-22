@@ -48,6 +48,17 @@ Add the configuration for the production database to `database.php`:
 ],
 ```
 
+Add the configuration in `.env`:
+
+```bash
+DB_LIVE_CONNECTION=mysql
+DB_LIVE_HOST=
+DB_LIVE_PORT=3306
+DB_LIVE_DATABASE=
+DB_LIVE_USERNAME=
+DB_LIVE_PASSWORD=
+```
+
 ## Usage
 
 Synchronize database:
